@@ -44,3 +44,5 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # alias for rake for zsh
 # needed for zsh compatability of octopress
 alias rake="noglob rake"
+
+alias vim='mvim -v'
