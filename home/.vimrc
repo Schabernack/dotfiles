@@ -68,6 +68,7 @@ map <C-K> :bprev<CR>
 "vim bundles
 
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'molokai'
 if has('gui_running')
 	set background=light
 	colorscheme solarized
@@ -75,10 +76,17 @@ if has('gui_running')
     let g:solarized_termcolors=256
     let g:solarized_contrast="high"
     let g:solarized_visibility="high"
+else
+    set background=dark
+    colorscheme molokai
 endif 
 
 Bundle 'bling/vim-airline'
-let g:airline_theme='solarized'
+if has('gui_running')
+    let g:airline_theme='solarized'
+else
+    let g:airline_theme='dark'
+endif
 let g:airline_enable_syntastic=1
 
 Bundle 'kien/ctrlp.vim'
