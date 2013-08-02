@@ -61,7 +61,20 @@ set foldlevel=99
 
 "appearance
 set t_Co=256
-set guifont=Menlo\ Regular:h12
+if has('gui_macvim')
+  set guifont=Menlo\ Regular:h12
+  set linespace=5
+elseif has('gui_gtk') || has('gui_gtk2')
+  set guifont="Ubuntu Mono":h15
+  set linespace=3
+elseif has('gui_win32')
+  set guifont=Consolas\ 13
+  set linespace=3
+else
+  set guifont=Iconsolata\ 15
+  set linespace=3
+endif
+
 
 
 
