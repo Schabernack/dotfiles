@@ -13,7 +13,7 @@ Bundle 'gmarik/vundle'
 set encoding=utf8
 
 syntax enable               " enable syntax highlighting
-set laststatus=2        " always show statusbar
+set laststatus=2            " always show statusbar
 set autoindent              " align the new line indent with the previous line
 set number                  " linenumbers
 set cursorline              " highlight current line
@@ -26,12 +26,26 @@ set visualbell              " visual indication instead of bell
 set scrolloff=3             " scroll 3 lines before horizontal window border
 set wrap linebreak nolist   " dont wrap lines in the middle of word
 
-"whitespace
+" whitespace
 set shiftwidth=4	" operation >> indents 4 columns; << unindents 4 columns
-set tabstop=4		" an hard TAB displays as 4 columns
+set tabstop=4		" a hard TAB displays as 4 columns
 set expandtab		" insert spaces when hitting TABs
 set softtabstop=4	" insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround		" round indent to multiple of 'shiftwidth'
+
+" ruby specific
+autocmd BufNewFile,BufRead Berksfile setlocal filetype=ruby
+autocmd BufNewFile,BufRead Cheffile setlocal filetype=ruby
+autocmd BufNewFile,BufRead Gemfile setlocal filetype=ruby
+autocmd BufNewFile,BufRead Puppetfile setlocal filetype=ruby
+autocmd BufNewFile,BufRead Vagrantfile setlocal filetype=ruby
+autocmd FileType ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
+" python specific	
+autocmd BufNewFile,BufRead *.wsgi setlocal filetype=python
+autocmd FileType python setlocal tabstop=4 softtabstop=4 shiftwidth=4
+autocmd BufNewFile,BufRead *.py setlocal nosmartindent		"better python indentation
+
 " set colorcolumn for code files
 autocmd FileType cpp,c,cxx,h,hpp,python,sh,ruby,vim  setlocal cc=80
 
@@ -49,7 +63,7 @@ set foldlevel=99
 set t_Co=256
 set guifont=Menlo\ Regular:h12
 
-autocmd BufNewFile,BufRead *.py setlocal nosmartindent		"better python indentation
+
 
 "custom key bindings
 
