@@ -132,8 +132,12 @@ Bundle 'kien/rainbow_parentheses.vim'
 au Syntax * RainbowParenthesesLoadRound
 nnoremap <Leader>rt :RainbowParenthesesToggle<CR>
 
+" load largefiles faster
 Bundle 'vim-scripts/LargeFile'
 
+" simple search highlighting
+" doc: https://github.com/vim-scripts/SearchHighlightign	
+" * toggles highlighting for current word/visual selection on/off	
 Bundle 'SearchHighlighting'
 
 "Bundle 'myusuf3/numbers.vim'
@@ -143,6 +147,7 @@ Bundle 'vim-scripts/RelOps'
 Bundle 'Valloric/YouCompleteMe'
 
 " like f but takes two characters. for quick jumps inside a line
+" seek motion summoned by 's'
 Bundle 'goldfeld/vim-seek'
 
 Bundle 'scrooloose/nerdtree'
