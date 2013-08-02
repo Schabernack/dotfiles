@@ -63,7 +63,7 @@ set foldlevel=99
 set t_Co=256
 if has('gui_macvim')
   set guifont=Menlo\ Regular:h12
-  set linespace=4
+  set linespace=3
 elseif has('gui_gtk') || has('gui_gtk2')
   set guifont="Ubuntu Mono":h15
   set linespace=3
