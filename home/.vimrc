@@ -168,6 +168,15 @@ map <Leader>n :NERDTreeToggle<CR>
 " close vim if NERDTree is last open window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" binds to ctrl-n
+" ctrl - p to remove current virtual cursor, go back to prev. virt. cursor  location
+" ctrl -x remove current v. cursor and skip to next v cursor location
+Bundle 'terryma/vim-multiple-cursors'
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 filetype plugin indent on     " required by vundle
 
