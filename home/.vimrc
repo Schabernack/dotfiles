@@ -80,6 +80,10 @@ endif
 
 "custom key bindings
 
+"move up/down by row, not line 
+nnoremap j gj
+nnoremap k gk
+
 :let mapleader = ","	"set leader to ,
 nmap <C-s> :w<CR>	"Ctrl + S to save file
 "unmap arrow keys
@@ -89,8 +93,8 @@ map <Up> <Nop>
 map <Down> <Nop>
 
 " CTRL j/k to switch buffers
-map <C-J> :bnext<CR>
-map <C-K> :bprev<CR>
+map <C-l> :bnext<CR>
+map <C-h> :bprev<CR>
 
 "vim bundles
 
@@ -177,6 +181,9 @@ let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+
+Bundle 'matze/vim-move'
+let g:move_key_modifier = 'C'
 
 filetype plugin indent on     " required by vundle
 
