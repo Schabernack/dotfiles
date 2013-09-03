@@ -23,15 +23,16 @@ set showcmd                 " Show incomplete cmds down the bottom
 set wildmenu                " Enhanced command line completion.	
 set autoread                " reload file after external modification
 set visualbell              " visual indication instead of bell
-set scrolloff=3             " scroll 3 lines before horizontal window border
-set wrap linebreak nolist   " dont wrap lines in the middle of word
+set scrolloff=3				" scroll 3 lines before horizontal window border
+set wrap linebreak nolist	" dont wrap lines in the middle of word
+set showbreak=↪				" linewrapping character
 
 " whitespace
-set shiftwidth=4	" operation >> indents 4 columns; << unindents 4 columns
-set tabstop=4		" a hard TAB displays as 4 columns
-set expandtab		" insert spaces when hitting TABs
-set softtabstop=4	" insert/delete 4 spaces when hitting a TAB/BACKSPACE
-set shiftround		" round indent to multiple of 'shiftwidth'
+set shiftwidth=4		" operation >> indents 4 columns; << unindents 4 columns
+set tabstop=4			" a hard TAB displays as 4 columns
+set expandtab			" insert spaces when hitting TABs
+set softtabstop=4		" insert/delete 4 spaces when hitting a TAB/BACKSPACE
+set shiftround			" round indent to multiple of 'shiftwidth'
 
 " ruby specific
 autocmd BufNewFile,BufRead Berksfile setlocal filetype=ruby
@@ -79,6 +80,8 @@ endif
 
 
 "custom key bindings
+
+nnoremap Q <nop>	"no accidental exmode
 
 "move up/down by row, not line 
 nnoremap j gj
@@ -190,6 +193,21 @@ let g:move_key_modifier = 'C'
 " move through files easier. activated by <leader><leader>
 " also works with the find command: <leader><leader>f<some letter>
 Bundle 'Lokaltog/vim-easymotion'
+
+" make % match begin-end and html tags
+Bundle 'vim-scripts/matchit.zip'
+
+" change pasting p/P behavior to properly indent lines
+Bundle 'sickill/vim-pasta'
+
+
+" random shit
+
+" auto reload .vimrc after changing stuff
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
 
 filetype plugin indent on     " required by vundle
 
