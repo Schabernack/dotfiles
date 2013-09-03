@@ -111,8 +111,8 @@ if has('gui_running')
 	let g:solarized_contrast="high"
 	let g:solarized_visibility="high"
 else
-    set background=dark
-    colorscheme molokai
+	set background=dark
+	colorscheme molokai
 endif 
 
 Bundle 'bling/vim-airline'
@@ -127,10 +127,10 @@ Bundle 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
-		\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-		\ 'file': '\v\.(exe|so|dll|pyc)$',
-		\ 'link': 'some_bad_symbolic_links',
-		\ }		
+			\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+			\ 'file': '\v\.(exe|so|dll|pyc)$',
+			\ 'link': 'some_bad_symbolic_links',
+			\ }		
 
 Bundle 'fholgado/minibufexpl.vim'
 
