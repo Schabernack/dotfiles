@@ -62,17 +62,17 @@ set foldlevel=99
 "appearance
 set t_Co=256
 if has('gui_macvim')
-  set guifont=Menlo\ Regular:h12
-  set linespace=3
+	set guifont=Menlo\ Regular:h12
+	set linespace=3
 elseif has('gui_gtk') || has('gui_gtk2')
-  set guifont="Ubuntu Mono":h15
-  set linespace=3
+	set guifont="Ubuntu Mono":h15
+	set linespace=3
 elseif has('gui_win32')
-  set guifont=Consolas\ 13
-  set linespace=3
+	set guifont=Consolas\ 13
+	set linespace=3
 else
-  set guifont=Iconsolata\ 15
-  set linespace=3
+	set guifont=Iconsolata\ 15
+	set linespace=3
 endif
 
 
@@ -92,7 +92,7 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
-" CTRL j/k to switch buffers
+" CTRL l/h to switch buffers
 map <C-l> :bnext<CR>
 map <C-h> :bprev<CR>
 
@@ -124,10 +124,10 @@ Bundle 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll|pyc)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+							\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+							\ 'file': '\v\.(exe|so|dll|pyc)$',
+							\ 'link': 'some_bad_symbolic_links',
+							\ }		
 
 Bundle 'fholgado/minibufexpl.vim'
 
@@ -145,6 +145,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
 " maps to <leader>ig
 Bundle 'nathanaelkane/vim-indent-guides'
 
+"<leader>rt for rainbow parentheses
 Bundle 'kien/rainbow_parentheses.vim'
 au Syntax * RainbowParenthesesLoadRound
 nnoremap <Leader>rt :RainbowParenthesesToggle<CR>
@@ -157,8 +158,7 @@ Bundle 'vim-scripts/LargeFile'
 " * toggles highlighting for current word/visual selection on/off	
 Bundle 'SearchHighlighting'
 
-"Bundle 'myusuf3/numbers.vim'
-"nnoremap <F3> :NumbersToggle<CR> 
+"relative line numbering in operator-pending mode 
 Bundle 'vim-scripts/RelOps'
 
 Bundle 'Valloric/YouCompleteMe'
@@ -172,7 +172,8 @@ map <Leader>n :NERDTreeToggle<CR>
 " close vim if NERDTree is last open window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" binds to ctrl-n
+
+" multiple cursors: binds to ctrl-n
 " ctrl - p to remove current virtual cursor, go back to prev. virt. cursor  location
 " ctrl -x remove current v. cursor and skip to next v cursor location
 Bundle 'terryma/vim-multiple-cursors'
@@ -182,8 +183,13 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
+" ctrl + j/k to move current line/visual selection up/down
 Bundle 'matze/vim-move'
 let g:move_key_modifier = 'C'
+
+" move through files easier. activated by <leader><leader>
+" also works with the find command: <leader><leader>f<some letter>
+Bundle 'Lokaltog/vim-easymotion'
 
 filetype plugin indent on     " required by vundle
 
