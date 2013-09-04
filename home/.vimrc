@@ -26,6 +26,7 @@ set visualbell              " visual indication instead of bell
 set scrolloff=3				" scroll 3 lines before horizontal window border
 set wrap linebreak nolist	" dont wrap lines in the middle of word
 set showbreak=↪				" linewrapping character
+set mousemodel=popup_setpos	"spell checker suggestions after rightcklick
 
 " whitespace
 set shiftwidth=4		" operation >> indents 4 columns; << unindents 4 columns
