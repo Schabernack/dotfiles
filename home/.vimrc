@@ -201,6 +201,9 @@ Bundle 'vim-scripts/matchit.zip'
 " change pasting p/P behavior to properly indent lines
 Bundle 'sickill/vim-pasta'
 
+" function list
+Bundle 'majutsushi/tagbar'
+nmap <Leader>t :TagbarToggle<CR>
 
 " random shit
 
