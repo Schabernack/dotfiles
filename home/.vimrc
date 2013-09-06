@@ -191,7 +191,7 @@ let g:multi_cursor_quit_key='<Esc>'
 Bundle 'matze/vim-move'
 let g:move_key_modifier = 'C'
 
-" move through files easier. activated by <leader><leader>
+" move through files easier. activated by <leader><leader>w
 " also works with the find command: <leader><leader>f<some letter>
 Bundle 'Lokaltog/vim-easymotion'
 
