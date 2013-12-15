@@ -29,12 +29,12 @@ ZSH_THEME="wedisagree_mod"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails ruby autojump svn brew bundler osx pow pip rails3 rvm sublime)
+plugins=(git rails ruby autojump svn brew bundler osx pow pip rvm)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/texlive/2012/bin/x86_64-darwin
+export PATH=/usr/local/Cellar/macvim/7.3-66/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/texlive/2012/bin/x86_64-darwin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
@@ -46,3 +46,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias rake="noglob rake"
 
 alias vim='mvim -v'
+
+#alt left/right to move forward one word
+bindkey -e
+bindkey '^[[1;9C' forward-word
+bindkey '^[[1;9D' backward-word
