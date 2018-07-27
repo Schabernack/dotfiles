@@ -1,0 +1,32 @@
+[core]
+    excludesfile = ~/.gitignore
+    editor = vim
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[user]
+    name = NN
+    email = xxx@foo.com
+[push]
+    default = current
+[pull]
+    default = simple
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+[alias]
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[merge]
+    tool = vimdiff
+    ff = false
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
